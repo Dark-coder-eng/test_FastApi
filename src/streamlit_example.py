@@ -2,10 +2,6 @@ import requests
 import streamlit as st
 
 
-# HOST_API = 'http://127.0.0.1'
-# PORT_API = '8006'
-
-
 def send_file_to_api(data: list):
     """Функция для передачи файла в api"""
     files = [(f'files', data[i]) for i in range(len(data))]
