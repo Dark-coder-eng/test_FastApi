@@ -9,7 +9,7 @@ import streamlit as st
 def send_file_to_api(data: list):
     """Функция для передачи файла в api"""
     files = [(f'files', data[i]) for i in range(len(data))]
-    response = requests.post(url=f'https://abc1-23-456-789-0.ngrok.io/file/', files=files)
+    response = requests.post(url=f'	https://unfeeding-isabelle-nondefinitively.ngrok-free.dev/file/', files=files)
     return response.status_code, response.content
 
 
