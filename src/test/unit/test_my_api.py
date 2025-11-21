@@ -16,7 +16,7 @@ def test_get_text(test_get_text_data: tuple[dict, dict]):
 def test_get_result_model(test_get_result_model_data: tuple[str, dict, dict]):
     input_data, response_gigachat, expected_result = test_get_result_model_data
 
-    with patch('requests.get') as mock_get:
+    with patch('requests.post') as mock_get:
         mock_response = Mock()
         mock_response.json.return_value = response_gigachat
         mock_response.raise_for_status.return_value = None

@@ -15,7 +15,7 @@ app = FastAPI()
 
 
 def get_data_from_gigachat(text):
-    response = requests.get(f'https://api.example.com/{text}')
+    response = requests.post(f'https://api.example.com/{text}')
     response.raise_for_status()
     return response.json()
 
