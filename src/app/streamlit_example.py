@@ -12,7 +12,7 @@ def send_file_to_api(data: list):
 st.title('Тестируем fastapi вместе с streamlit')
 
 
-uploaded_file = st.file_uploader("Выберите файл", accept_multiple_files=True, type=["txt", "docx"])
+uploaded_file = st.file_uploader("Выберите файл", accept_multiple_files=True, type=["txt"])
 
 button_send_file_result = st.button('Отправить файл на обработку')
 

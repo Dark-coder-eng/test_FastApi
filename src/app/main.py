@@ -1,5 +1,6 @@
 from typing import List
 
+import requests
 import uvicorn
 from fastapi import FastAPI, UploadFile
 from pydantic import BaseModel
@@ -13,14 +14,26 @@ class Item(BaseModel):
 app = FastAPI()
 
 
+def get_data_from_gigachat(text):
+    response = requests.get(f'https://api.example.com/{text}')
+    response.raise_for_status()
+    return response.json()
+
+
 @app.get("/")
 def hello():
     return {"Hello": "World"}
 
 
+@app.post("/gigachat/{text}")
+def get_result_model(text: str):
+    result = get_data_from_gigachat(text)
+    return {'result_model': result}
+
+
 @app.post("/text/")
 def get_text(item: Item):
-    return {"Text": item.text}
+    return {"text": 'start_' + item.text + '_end'}
 
 
 @app.post("/file/")
