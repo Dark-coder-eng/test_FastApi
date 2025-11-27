@@ -28,6 +28,7 @@ def hello():
 @app.post("/gigachat/{text}")
 def get_result_model(text: str):
     result = get_data_from_gigachat(text)
+    # Обработка результата, какие-то вычисления
     return {'result_model': result}
 
 
