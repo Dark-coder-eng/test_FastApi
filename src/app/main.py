@@ -15,7 +15,7 @@ app = FastAPI()
 
 
 def get_data_from_gigachat(text):
-    response = requests.post(f'https://api.example.com/{text}')
+    response = requests.post(f"https://api.example.com/{text}")
     response.raise_for_status()
     return response.json()
 
@@ -29,12 +29,12 @@ def hello():
 def get_result_model(text: str):
     result = get_data_from_gigachat(text)
     # Обработка результата, какие-то вычисления
-    return {'result_model': result}
+    return {"result_model": result}
 
 
 @app.post("/text/")
 def get_text(item: Item):
-    return {"text": 'start_' + item.text + '_end'}
+    return {"text": "start_" + item.text + "_end"}
 
 
 @app.post("/file/")
