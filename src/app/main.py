@@ -13,7 +13,7 @@ class Item(BaseModel):
 # Команда для запуска: uvicorn main:app --host 127.0.0.1 --port 8001
 app = FastAPI()
 
-
+# Получаем данну
 def get_data_from_gigachat(text):
     response = requests.post(f'https://api.example.com/{text}')
     response.raise_for_status()
