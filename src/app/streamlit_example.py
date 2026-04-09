@@ -8,6 +8,7 @@ def send_file_to_api(data: list):
     response = requests.post(url='https://unfeeding-isabelle-nondefinitively.ngrok-free.dev/file/', files=files)
     return response.status_code, response.content
 
+st.title('Начало програмы')
 
 st.title('Тестируем fastapi вместе с streamlit')
 
