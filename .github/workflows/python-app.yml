@@ -39,9 +39,10 @@ jobs:
         export PYTHONPATH=$PWD/src
         echo $PYTHONPATH
         pytest
+
   build-and-push:
-      name: Сборка и публикация Docker образа
       runs-on: ubuntu-latest
+      needs: build
       steps:
         # 1. Скачиваем код из репозитория
         - name: Checkout code
