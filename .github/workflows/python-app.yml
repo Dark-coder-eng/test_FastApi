@@ -63,7 +63,7 @@ jobs:
           id: meta
           uses: docker/metadata-action@v5
           with:
-            images: ${{ secrets.DOCKERHUB_USERNAME }}/test_FastApi
+            images: ${{ secrets.DOCKERHUB_USERNAME }}/test_fastApi
             tags: |
               type=sha,prefix={{date 'YYYYMMDD'}}-  # Тег вида 20250325-abc1234
               type=raw,value=latest                 # Тег latest
